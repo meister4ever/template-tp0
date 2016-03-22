@@ -110,12 +110,6 @@ public class RegExGenerator {
             return item.charAt(item.length() - 1);
     }
 
-    public char generateRandomStringBracketsQuestionMark(int numberOfResults, String item) {
-        if (numberOfResults < item.length() - 1)
-            return item.charAt(numberOfResults + 1);
-        else
-            return item.charAt(item.length() - 1);
-    }
 
     public char generateRandomChar() {
         Random random = new Random();
@@ -147,7 +141,7 @@ public class RegExGenerator {
                         regularExpression = regularExpression.substring(1);
                     }
                     aux += ']';
-                    regularExpression.substring(0, 1);
+                    String substring = regularExpression.substring(0, 1);
                     regularExpression = regularExpression.substring(1);
                     if (!regularExpression.isEmpty()) {
                         if (regularExpression.charAt(0) == '+') {
@@ -157,13 +151,13 @@ public class RegExGenerator {
                         if (!regularExpression.isEmpty())
                             if (regularExpression.charAt(0) == '*') {
                                 aux += '*';
-                                regularExpression.substring(0, 1);
+                                String sstring = regularExpression.substring(0, 1);
                                 regularExpression = regularExpression.substring(1);
                             }
                         if (!regularExpression.isEmpty())
                             if (regularExpression.charAt(0) == '?') {
                                 aux += '?';
-                                regularExpression.substring(0, 1);
+                                String sbstring = regularExpression.substring(0, 1);
                                 regularExpression = regularExpression.substring(1);
                             }
                     }
@@ -254,7 +248,7 @@ public class RegExGenerator {
                             matchingString += generateRandomStringQuestionMark(numberOfResults);
                             break;
                         case '[':
-                            matchingString += generateRandomStringBracketsQuestionMark(numberOfResults, item);
+                            matchingString += generateStringBrackets(numberOfResults, item);
                             break;
                         default:
                             matchingString += generateStringLiteralQuestionMark(numberOfResults, item.charAt(0));
