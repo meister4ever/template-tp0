@@ -141,8 +141,7 @@ public class RegExGenerator {
                         regularExpression = regularExpression.substring(1);
                     }
                     aux += ']';
-                    String substring = regularExpression.substring(0, 1);
-                    regularExpression = regularExpression.substring(1);
+                    regularExpression = regularExpression.substring(0, 1);
                     if (!regularExpression.isEmpty()) {
                         if (regularExpression.charAt(0) == '+') {
                             aux += '+';
@@ -151,14 +150,12 @@ public class RegExGenerator {
                         if (!regularExpression.isEmpty())
                             if (regularExpression.charAt(0) == '*') {
                                 aux += '*';
-                                String sstring = regularExpression.substring(0, 1);
-                                regularExpression = regularExpression.substring(1);
+                                regularExpression = regularExpression.substring(0, 1);
                             }
                         if (!regularExpression.isEmpty())
                             if (regularExpression.charAt(0) == '?') {
                                 aux += '?';
-                                String sbstring = regularExpression.substring(0, 1);
-                                regularExpression = regularExpression.substring(1);
+                                regularExpression = regularExpression.substring(0, 1);
                             }
                     }
                     regularExpressionList.add(aux);
